@@ -1,0 +1,24 @@
+# 全局配置示例
+
+# OpenAI / DashScope API 配置
+openai:
+  api_key: ""  # 建议使用环境变量 OPENAI_API_KEY
+  base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+  model: "qwen-plus"
+
+# Qdrant 向量数据库配置
+qdrant:
+  host: "localhost"
+  port: 6334
+  api_key: ""
+  use_http: false
+
+# 服务配置
+server:
+  host: "0.0.0.0"
+  port: 8080
+  mode: "debug"  # debug, release, test
+
+# Embedding 配置
+embedding:
+  model: "text-embedding-v3"
