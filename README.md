@@ -1,6 +1,6 @@
-# SA - Simple Agent
+# SA - Special Assiant
 
-一个包含三个子项目的 Go 项目，使用 go.work 进行多模块管理。
+AI Agent 基于私有向量知识库的办公助手
 
 ## 项目结构
 
