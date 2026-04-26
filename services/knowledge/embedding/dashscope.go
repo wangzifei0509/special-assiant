@@ -27,7 +27,7 @@ type Config struct {
 // NewService 创建 Embedding 服务
 func NewService(cfg *Config) *Service {
 	if cfg.Model == "" {
-		cfg.Model = "text-embedding-v3"
+		cfg.Model = "text-embedding-v4"
 	}
 	if cfg.BaseURL == "" {
 		cfg.BaseURL = "https://dashscope.aliyuncs.com/compatible-mode/v1"

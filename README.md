@@ -37,8 +37,7 @@ sa/
 
 **技术栈:**
 - BubbleTea (TUI)
-- Glamour (Markdown 渲染)
-- OpenAI SDK (兼容 DashScope)
+- 自己实现 规划、上下文、历史会话，技能
 
 **启动:**
 ```bash
@@ -47,7 +46,7 @@ go run .
 ```
 
 ### 2. Gateway (`services/gateway`)
-API 网关服务，提供聊天接口和代理功能。
+API 网关服务，提供open AI和RAG项目库代理功能，直接跟用户端交互，鉴权，token审计。
 
 **技术栈:**
 - Gin (HTTP 框架)
@@ -55,8 +54,8 @@ API 网关服务，提供聊天接口和代理功能。
 
 **API 端点:**
 - `GET /health` - 健康检查
-- `POST /api/v1/chat` - 单次聊天
-- `POST /api/v1/chat/stream` - 流式聊天 (SSE)
+- `POST /llm` - 调用大模型
+- `POST /rag` - 调用rag知识库
 
 **启动:**
 ```bash
@@ -69,7 +68,7 @@ go run .
 
 **技术栈:**
 - Gin (HTTP 框架)
-- DashScope Embedding API
+- DashScope Embedding 
 - Qdrant (向量数据库)
 
 **API 端点:**
@@ -86,28 +85,7 @@ go run .
 
 ## 配置
 
-编辑 `configs/config.yaml` 或使用环境变量:
-
-```yaml
-openai:
-  api_key: ""        # 或使用 OPENAI_API_KEY 环境变量
-  base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
-  model: "qwen-plus"
-
-qdrant:
-  host: "localhost"
-  port: 6333
-  api_key: ""
-  use_http: false
-
-server:
-  host: "0.0.0.0"
-  port: 8080
-  mode: "debug"
-
-embedding:
-  model: "text-embedding-v3"
-```
+编辑 `configs/config.yaml` 
 
 ## 构建
 
